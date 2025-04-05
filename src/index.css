@@ -37,6 +37,9 @@
 
 
 /* common css */
+*{
+  @apply font-Poppins
+}
 .cmnBtn{
   @apply py-4 font-semibold text-[12px] leading-[18px] uppercase text-white bg-brand   
 }

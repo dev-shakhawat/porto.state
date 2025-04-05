@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 
-function PropertyCard({ note, price, title , beds , baths , sq }) {
+function PropertyCard({image , btnview , note , notestyle, price, title , beds , baths , sq }) {
   return (
-    <div className="flex flex-col bg-white h-fit pt-8 rounded-md relative overflow-hidden w-[340px] ">
+    <div className="flex flex-col bg-white h-fit pt-8 rounded-md relative overflow-hidden w-full ">
       <div className="relative w-full  ">
+        {image && <img src={image} alt="image" className=" w-full mb-4" />}
         {note && (
-          <h3 className=" absolute top-[-10px] right-[-130px] bg-[#43CB83] py-3 font-semibold text-[14px] leading-[24px] uppercase text-white w-[100%] text-center rotate-[50deg]   ">
+          <h3 className={notestyle}>
             {note}
           </h3>
         )}
@@ -19,9 +20,11 @@ function PropertyCard({ note, price, title , beds , baths , sq }) {
           <h4 className=" flex justify-between font-bold text-base uppercase leading-[24px] text-secondery  ">
           <span>BEDS: {beds}</span> <span>BATHS: {baths}</span> <span>SQ FT: {sq}</span>
           </h4>
+          {btnview && 
           <button type="button" className="cmnBtn mt-5 pl-4 w-full text-left   ">
             view property
           </button>
+          }
         </div>
       </div>
     </div>
